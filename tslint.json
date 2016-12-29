@@ -1,36 +1,102 @@
 {
-  "extends":["tslint-microsoft-contrib", "tslint-react"],
-  "rules": {
-    "no-for-in-array": false,
-    "restrict-plus-operands": false,    
-    "missing-jsdoc": false,
-    "eofline": false,
-    "linebreak-style": [],
-    "ordered-imports": [],
-    "export-name": false,
-    "no-default-export": true,
-    "no-increment-decrement": false,
-    "align": [],
-    "no-any": false,
-    "max-line-length": [true, 180],
-    "insecure-random": false ,
-    "quotemark": [true, "single", "jsx-double"],
-    "variable-name": [true, "allow-pascal-case", "allow-leading-underscore"],    
-    "no-consecutive-blank-lines": [true, 1],
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",      
-      "check-module",
-      "check-type"
-    ],
-    "react-this-binding-issue": false,
-    "react-tsx-curly-spacing": false,
-    "jsx-no-lambda": false,
-    "import-name": false,
-    "no-unused-variable": [false],
-    "no-console": [false]
-  }
+    "extends":["tslint:latest"],
+    "jsRules": {
+        "class-name": true,
+        "comment-format": [
+            true,
+            "check-space"
+        ],
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "no-duplicate-variable": true,
+        "no-eval": true,
+        "no-trailing-whitespace": true,
+        "no-unsafe-finally": true,
+        "one-line": [
+            true,
+            "check-open-brace",
+            "check-whitespace"
+        ],
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords"
+        ],
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-separator",
+            "check-type"
+        ]
+    },
+    "rules": {
+        "class-name": true,
+        "comment-format": [
+            true,
+            "check-space"
+        ],
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "no-eval": true,
+        "no-internal-module": true,
+        "no-trailing-whitespace": true,
+        "no-unsafe-finally": true,
+        "no-var-keyword": true,
+        "one-line": [
+            true,
+            "check-open-brace",
+            "check-whitespace"
+        ],
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ],
+        "typedef-whitespace": [
+            true,
+            {
+                "call-signature": "nospace",
+                "index-signature": "nospace",
+                "parameter": "nospace",
+                "property-declaration": "nospace",
+                "variable-declaration": "nospace"
+            }
+        ],
+        "variable-name": [
+            true,
+            "ban-keywords"
+        ],
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-separator",
+            "check-type"
+        ]
+    }
 }

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "karma start karma.conf.js",
     "postinstall": "npm run typings install",
-    "typings": "typings"
+    "typings": "typings",
+    "lint": "tslint ./src/*.ts"
   },
   "repository": {
     "type": "git",
@@ -25,11 +26,13 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.8.0",
     "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1"
+    "gulp-eslint": "^3.0.1",
+    "tslint": "^4.2.0"
   },
   "dependencies": {
     "@types/lodash": "^4.14.44",
     "bluebird": "^3.4.7",
-    "lodash": "^4.17.3"
+    "lodash": "^4.17.3",
+    "typescript": "^2.1.4"
   }
 }
