@@ -1,0 +1,35 @@
+{
+  "name": "mr-freeze",
+  "version": "1.0.0",
+  "description": "Test state management",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "postinstall": "npm run typings install",
+    "typings": "typings"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joskraps/mr-freeze.git"
+  },
+  "author": "Joel Sparks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joskraps/mr-freeze/issues"
+  },
+  "homepage": "https://github.com/joskraps/mr-freeze#readme",
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.44",
+    "bluebird": "^3.4.7",
+    "lodash": "^4.17.3"
+  }
+}
