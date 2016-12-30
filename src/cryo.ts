@@ -1,15 +1,18 @@
 import * as Promise from 'bluebird';
 import * as _ from 'lodash';
 
-interface IStateProps {
+export interface IStateProps {
     stateName: string;
     state: any;
 }
 
-interface ICryo {
+export interface ICryo {
     exists(key: string): Promise<boolean>;
+    existsSync(key: string): boolean;
     freeze(store: any, key: string): Promise<void>;
+    freezeSync(store: any, key: string): boolean
     thaw(key: string): Promise<any>;
+    thawSync(key: string): any;
 }
 
 export class Cryo implements ICryo {
@@ -17,6 +20,10 @@ export class Cryo implements ICryo {
 
     constructor() {
         this.states = {};
+    }
+
+    public existsSync(key: string): boolean {
+        return this.states[key] != null;
     }
 
     public exists(key: string): Promise<boolean> {
@@ -29,11 +36,25 @@ export class Cryo implements ICryo {
         return Promise.resolve();
     }
 
+    public freezeSync(store: any, key: string): boolean {
+        this.states[key] = <IStateProps>{ state: store, stateName: key };
+
+        return true;
+    }
+
     public thaw(key: string): Promise<any> {
         if (this.exists(key)) {
             return Promise.resolve(_.cloneDeep(this.states[key].state));
         }
 
         return Promise.resolve(null);
+    }
+
+    public thawSync(key: string): any {
+        if (this.exists(key)) {
+            return _.cloneDeep(this.states[key].state);
+        }
+
+        return null;
     }
 }

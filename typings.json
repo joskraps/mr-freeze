@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
-    "bluebird": "registry:dt/bluebird#2.0.0+20160319051630"
+    "bluebird": "registry:dt/bluebird#2.0.0+20160319051630",
+    "jasmine": "registry:dt/jasmine#2.5.0+20161003201800"
   }
 }

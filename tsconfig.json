@@ -1,20 +1,19 @@
 {
-  "compileOnSave": false, 
+  "compileOnSave": false,
   "compilerOptions": {
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,    
-    "sourceMap": true,
     "target": "es6",
+    "declaration": true,
     "module": "commonjs",
+    "sourceMap": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
-    "paths": {
-      "src/*": ["./src/*"],
-      "test/*": ["./test/*"]
-    }
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    //"outDir": "dist",
+    "noImplicitAny": false,
+    "rootDir": "."
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }
