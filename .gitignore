@@ -1,6 +1,6 @@
 node_modules/
 typings/
-src/*.js*
+src/*.js
 specs/**/*.js
 dist/
 .d.ts
