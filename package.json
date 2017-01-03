@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Test state management",
   "scripts": {
-    "test": "gulp test",
-    "postinstall": "npm run typings install",
-    "typings": "typings"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
