@@ -1,6 +1,8 @@
 node_modules/
 typings/
 src/*.js*
+specs/**/*.js
+dist/
 .d.ts
 *.d.ts
 *.js.map

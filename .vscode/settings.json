@@ -9,11 +9,15 @@
         },
         "src/*.js.map": true,
         "src/*.d.ts": true,
-        "spec/**/*.js": {
+        "dist/src/*.js.map": true,
+        "dist/src/*.d.ts": true,
+        "specs/**/*.js": {
             "when": "$(basename).js"
         },
-        "spec/**/*.js.map": true,
-        "spec/**/*.d.ts": true,
+        "specs/**/*.js.map": true,
+        "specs/**/*.d.ts": true,
+        "dist/specs/**/*.js.map": true,
+        "dist/specs/**/*.d.ts": true,
         "files.eol": true,
         "files.insertFinalNewline": true,
         "typescript.tsdk": "./node_modules/typescript/lib"

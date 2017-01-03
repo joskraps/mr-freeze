@@ -1,21 +1,12 @@
 import * as Promise from 'bluebird';
-import * as _ from 'lodash';
+import {cloneDeep} from 'lodash';
 
 export interface IStateProps {
     stateName: string;
     state: any;
 }
 
-export interface ICryo {
-    exists(key: string): Promise<boolean>;
-    existsSync(key: string): boolean;
-    freeze(store: any, key: string): Promise<void>;
-    freezeSync(store: any, key: string): boolean
-    thaw(key: string): Promise<any>;
-    thawSync(key: string): any;
-}
-
-export class Cryo implements ICryo {
+export class Cryo {
     private states: { [id: string]: IStateProps; };
 
     constructor() {
@@ -44,7 +35,7 @@ export class Cryo implements ICryo {
 
     public thaw(key: string): Promise<any> {
         if (this.exists(key)) {
-            return Promise.resolve(_.cloneDeep(this.states[key].state));
+            return Promise.resolve(cloneDeep(this.states[key].state));
         }
 
         return Promise.resolve(null);
@@ -52,7 +43,7 @@ export class Cryo implements ICryo {
 
     public thawSync(key: string): any {
         if (this.exists(key)) {
-            return _.cloneDeep(this.states[key].state);
+            return cloneDeep(this.states[key].state);
         }
 
         return null;
