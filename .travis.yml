@@ -2,11 +2,10 @@ language: node_js
 node_js:
   - 6
 before_script:
-    - npm install gulp -g
-    - npm install typings -g
-    - npm run typings install
+    - npm install gulp
 script: 
     - gulp
+    # - release-it --non-interactive
 branches:
   only:
     - master
