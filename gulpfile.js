@@ -8,9 +8,7 @@ const merge = require('merge2');
 const del = require('del');
 const path = require('path');
 
-
 const tsProject = tsc.createProject('tsconfig.json');
-
 
 gulp.task('clean-ts', (callback) => {
   const typeScriptGenFiles = ['./dist/**/*.*'];

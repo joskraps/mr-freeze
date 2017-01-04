@@ -4,7 +4,7 @@ node_js:
 before_script:
     - npm install gulp
     - npm install typings
-    - npm typings
+    - npm run typings
 script:
     - gulp test
 branches:
