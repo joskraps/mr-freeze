@@ -49,3 +49,5 @@ export class Cryo {
         return null;
     }
 }
+
+export const cryo = new Cryo();

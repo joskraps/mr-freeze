@@ -13,6 +13,8 @@
   "keywords": [
     "cryo"
   ],
+  "main": "./dist/src/cryo.js",
+  "typings": "./dist/src/cryo.d.ts",
   "author": "Joel Sparks",
   "license": "apache-2.0",
   "bugs": {
