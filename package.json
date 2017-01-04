@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Test state management",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "typings": "typings install"
   },
   "repository": {
     "type": "git",
