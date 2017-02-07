@@ -1,50 +1,76 @@
-// import {Cryo} from '../../src/cryo';
-// import {createStore} from 'redux';
+import {MrFreeze} from '../../src/mr-freeze';
+import {createStore} from 'redux';
 
-// interface IStoreState {
-//     name: string;
-// }
+interface IStoreState {
+    name: string;
+    baz: {
+        foo: string;
+        bar: number;
+    };
+}
 
-// describe('Cryo', () => {
-//     let store: Redux.Store<IStoreState>;
-//     let testCryo: Cryo;
+const initialState = {
+    baz: {
+        bar: 22,
+        foo: 'hey',
+    },
+    name: 'Joel',
+};
 
-//     beforeEach(() => {
-//         store = createStore<IStoreState>((state: IStoreState, action: Redux.Action) => {name: 'Joel'});
-//         testCryo = new Cryo();
-//     });
+const testReducer = (state: IStoreState, actions: Redux.Action) => {
+    return initialState;
+};
 
-//     describe('store does not exist', () => {
-//         it('should return false when it does not exist', () => {
-//             expect(testCryo.exists('test2')).toBeFalsy();
-//         });
+describe('Mr Freeze', () => {
+    let store: Redux.Store<IStoreState>;
+    let testMrFreeze: MrFreeze;
 
-//     });
+    beforeEach(() => {
+        store = createStore<IStoreState>(testReducer, initialState);
+        testMrFreeze = new MrFreeze();
+    });
 
-//     describe('store exists', () => {
-//         beforeEach(() => {
-//             testCryo.freeze(store, 'test');
-//         });
+    describe('store does not exist', () => {
+        it('should return false when it does not exist', () => {
+            expect(testMrFreeze.exists('test2')).toBeFalsy();
+        });
 
-//         it('should return true when it does exist', () => {
-//             expect(testCryo.exists('test')).toBeTruthy();
-//         });
-//     });
+    });
 
-//     describe('thawing a frozen store', () => {
-//         it('should return the correct object', () => {
-//             expect(returnO).toEqual(testO);
-//         });
+    describe('store exists', () => {
+        beforeEach(() => {
+            testMrFreeze.freeze(store, 'test');
+        });
 
-//         describe('when the new object changes a value', () => {
-//             it('should not change the original objects value', () => {
-//                 returnO.name = 'joel2';
-//                 let returnO2 = testCryo.thaw('test');
-//                 expect(returnO.name).toEqual('joel2');
-//                 expect(returnO2.name).toEqual('joel');
-//                 expect(returnO).not.toEqual(returnO2);
-//                 expect(returnO2).toEqual(testO);
-//             });
-//         });
-//     });
-// });
+        it('should return true when it does exist', () => {
+            expect(testMrFreeze.exists('test')).toBeTruthy();
+        });
+    });
+
+    describe('thawing a frozen store', () => {
+        let thawedStore: Redux.Store<IStoreState>;
+
+        beforeEach(() => {
+            testMrFreeze.freeze(store, 'test');
+            thawedStore = testMrFreeze.thaw('test');
+        });
+
+        it('should return the correct object', () => {
+            const state = thawedStore.getState();
+            expect(state.name).toBe('Joel');
+            expect(state.baz.bar).toBe(22);
+            expect(state.baz.foo).toBe('hey');
+        });
+
+        describe('when a value is changed on a thawed store', () => {
+            beforeEach(() => {
+                thawedStore.getState().baz.foo = 'yo';
+            });
+
+            it('should not affect other thawed stores', () => {
+                const anotherThawedStore = testMrFreeze.thaw('test');
+                expect(anotherThawedStore.getState().baz.foo).toBe('hey');
+            });
+        });
+    });
+});
