@@ -4,22 +4,9 @@
         "node_modules/": true,
         "build/": true,
         "typings/": true,
-        "src/*.js": {
-            "when": "$(basename).js"
-        },
         "src/*.js.map": true,
         "src/*.d.ts": true,
-        "dist/src/*.js.map": true,
-        "dist/src/*.d.ts": true,
-        "specs/**/*.js": {
-            "when": "$(basename).js"
-        },
-        "specs/**/*.js.map": true,
-        "specs/**/*.d.ts": true,
-        "dist/specs/**/*.js.map": true,
-        "dist/specs/**/*.d.ts": true,
-        "files.eol": true,
-        "files.insertFinalNewline": true,
-        "typescript.tsdk": "./node_modules/typescript/lib"
-    }
+        "dist/": true
+    },
+    "typescript.tsdk": "./node_modules/typescript/lib"
 }

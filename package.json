@@ -11,10 +11,10 @@
     "url": "git+https://github.com/joskraps/mr-freeze.git"
   },
   "keywords": [
-    "cryo"
+    "mr-freeze"
   ],
-  "main": "./dist/src/cryo.js",
-  "typings": "./dist/src/cryo.d.ts",
+  "main": "./dist/src/mr-freeze.js",
+  "typings": "./dist/src/mr-freeze.d.ts",
   "author": "Joel Sparks",
   "license": "apache-2.0",
   "bugs": {
@@ -23,12 +23,13 @@
   "homepage": "https://github.com/joskraps/mr-freeze#readme",
   "devDependencies": {
     "jasmine": "^2.5.2",
+    "redux": "^3.6.0",
     "tslint": "^4.2.0",
     "typescript": "^2.1.4"
   },
   "dependencies": {
     "@types/lodash": "^4.14.44",
-    "bluebird": "^3.4.7",
+    "bluebird": "^3.4.7",    
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-jasmine": "^2.4.2",
