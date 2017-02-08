@@ -1,6 +1,6 @@
 {
   "name": "mr-freeze",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Test state management",
   "scripts": {
     "test": "gulp test",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.44",
-    "bluebird": "^3.4.7",    
+    "bluebird": "^3.4.7",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-jasmine": "^2.4.2",
