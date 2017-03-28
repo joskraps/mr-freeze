@@ -1,6 +1,6 @@
 {
   "name": "mr-freeze",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Test state management",
   "scripts": {
     "test": "gulp test",
