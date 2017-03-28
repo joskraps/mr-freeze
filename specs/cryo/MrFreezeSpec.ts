@@ -1,5 +1,5 @@
+import {Action, createStore, Store} from 'redux';
 import {MrFreeze} from '../../src/mr-freeze';
-import {createStore} from 'redux';
 
 interface IStoreState {
     name: string;
@@ -17,12 +17,12 @@ const initialState = {
     name: 'Joel',
 };
 
-const testReducer = (state: IStoreState, actions: Redux.Action) => {
+const testReducer = (state: IStoreState, actions: Action) => {
     return initialState;
 };
 
 describe('Mr Freeze', () => {
-    let store: Redux.Store<IStoreState>;
+    let store: Store<IStoreState>;
     let testMrFreeze: MrFreeze;
 
     beforeEach(() => {
@@ -48,7 +48,7 @@ describe('Mr Freeze', () => {
     });
 
     describe('thawing a frozen store', () => {
-        let thawedStore: Redux.Store<IStoreState>;
+        let thawedStore: Store<IStoreState>;
 
         beforeEach(() => {
             testMrFreeze.freeze(store, 'test');

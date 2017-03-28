@@ -1,7 +1,8 @@
 import {cloneDeep} from 'lodash';
+import {Store} from 'redux';
 
 interface IStoreAndState {
-    store: Redux.Store<any>;
+    store: Store<any>;
     originalState: any;
 }
 
@@ -17,12 +18,12 @@ export class MrFreeze {
         return this.states[key] != null;
     }
 
-    public freeze(store: Redux.Store<any>, key: string): Redux.Store<any> {
+    public freeze(store: Store<any>, key: string): Store<any> {
         this.states[key] = { store, originalState: {...store.getState()} };
         return this.thaw(key);
     }
 
-    public thaw(key: string): Redux.Store<any> {
+    public thaw(key: string): Store<any> {
         if (this.exists(key)) {
             const store = this.states[key].store;
             const originalState = this.states[key].originalState;

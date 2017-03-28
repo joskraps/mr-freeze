@@ -1,9 +1,0 @@
-{
-  "globalDependencies": {
-    "jasmine": "registry:dt/jasmine#2.5.0+20161003201800",
-    "redux": "registry:dt/redux#3.5.2+20160703092728"
-  },
-  "dependencies": {
-    "clone": "registry:dt/clone#0.1.11+20160428043022"
-  }
-}
